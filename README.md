@@ -6,6 +6,7 @@
 - Product Slider
 - Mega menu
 - Sticky header
+- Responsive
 
 ### Technology Used:
 - Vanilla JavaScript
