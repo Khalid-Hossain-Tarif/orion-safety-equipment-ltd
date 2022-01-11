@@ -1,0 +1,230 @@
+//Basic CSS
+.slider-heading {
+    font-family: "Poppins", sans-serif;
+    font-size: 6.25rem;
+    color: $white-color;
+    text-transform: uppercase;
+    line-height: 1.1;
+
+    span {
+        font-size: 2.5rem;
+        display: block;
+        font-weight: 500;
+        letter-spacing: 0.8125rem;
+    }
+}
+
+//Common CSS
+.common-section {
+    @include padding-gap;
+
+    .items {
+        @include display-grid($gap: 5rem);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        align-items: center;
+    }
+}
+
+.one-stop-safety,
+.product-categories,
+.what-we-do {
+    img {
+        &:hover {
+            transform: skew(-2deg);
+        }
+    }
+}
+
+//Hero Slider
+.hero-slider {
+    .slider-item {
+        padding: 23rem 0 9rem;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url(../images/banner/banner1-bg.jpg);
+
+        &:nth-child(2) {
+            background-image: url(../images/banner/banner2-bg.jpg);
+        }
+
+        &:nth-child(3) {
+            background-image: url(../images/banner/banner3-bg.jpg);
+        }
+
+        &:nth-child(4) {
+            background-image: url(../images/banner/banner4-bg.jpg);
+        }
+
+        .btn {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+//Hero Section Request Form
+.hero-section {
+    .request-form {
+        position: absolute;
+        right: -200%;
+        top: 20%;
+        overflow-y: scroll;
+        height: 75%;
+        width: 372px;
+        background-color: $white-color;
+        box-shadow: -10px 0 100px rgb(192 6 6 / 92%);
+        z-index: 999;
+        @include set-transition;
+
+        .form-content {
+            padding: 2rem;
+
+            .form-text {
+                font-size: 0.875rem;
+            }
+        }
+
+        &.active {
+            right: 0;
+        }
+    }
+}
+
+//Quick Links Info
+.quick-links {
+    @include display-flex($gap: 0, $align-items: stretch);
+
+    .quick-links-item {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        padding: 6rem 6rem 2rem;
+        text-align: center;
+        overflow: hidden;
+        @include set-transition;
+
+        .main-heading {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        img {
+            max-width: 75px;
+            @include set-transition;
+        }
+
+        .content {
+            @include set-transition;
+        }
+
+        .btn {
+            transform: translateY(400px);
+        }
+
+        &:hover {
+            background-color: #c71d1d;
+
+            img {
+                transform: translateY(-400px);
+            }
+
+            .content {
+                transform: translateY(-100px);
+            }
+
+            .btn {
+                transform: translateY(-80px);
+            }
+        }
+    }
+
+    .first-item {
+        background-image: url(../images/sales-bg.png);
+        background-color: #4a4a4a;
+    }
+
+    .second-item {
+        background-image: url(../images/rentals-bg.png);
+        background-color: #0b0b0b;
+    }
+
+    .third-item {
+        background-image: url(../images/service-bg.png);
+        background-color: #4a4a4a;
+        background-size: auto;
+        background-position: 60% 50%;
+    }
+}
+
+//Certification & Calibaration
+.certification {
+    .item {
+        box-shadow: 2px 2px 20px rgb(194 5 5 / 0);
+        @include set-transition;
+
+        &:hover {
+            box-shadow: 2px 7px 50px rgb(194 5 5 / 0.15);
+        }
+
+        .main-heading {
+            margin-bottom: 1.5rem;
+        }
+
+        .content {
+            padding: 2rem 3rem 3rem;
+        }
+    }
+
+}
+
+//Product Categories
+.product-categories {
+    @include padding-gap;
+    background: url(../images/product-bg.jpg) center center/cover no-repeat;
+
+    .items {
+        @include display-grid($place-content: initial, $gap: 3rem);
+        grid-template-columns: 8rem auto;
+    }
+
+    .slider-heading {
+        font-size: 4rem;
+        transform: rotate(270deg) translateX(-10.5rem);
+
+        span {
+            font-size: 1.9rem;
+        }
+    }
+
+    .products-slider {
+        .slider-item {
+            padding-left: 2rem;
+            text-align: center;
+
+            img {
+                max-width: 5.625rem;
+                margin: auto;
+                display: inline-block;
+            }
+        }
+    }
+
+    .view-more-btn {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+//Newsletter
+.newsletter {
+    background-color: $primary-color;
+
+    .items {
+        @include display-flex;
+
+        .main-heading {
+            margin-bottom: 0;
+        }
+    }
+}

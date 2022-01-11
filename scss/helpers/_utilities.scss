@@ -1,0 +1,130 @@
+@import "mixin";
+@import "variables";
+
+//Background Color
+.bg {
+  &-primary {
+    @include set-background($primary-color);
+  }
+
+  &-dark {
+    @include set-background($dark-color);
+  }
+
+  &-light {
+    @include set-background($light-color);
+    border: #ccc 1px solid;
+  }
+
+  &-danger {
+    @include set-background($danger-color);
+  }
+
+  &-succes {
+    @include set-background($success-color);
+  }
+
+  &-white {
+    @include set-background($white-color);
+  }
+}
+
+//Buttons
+.btn {
+  display: inline-block;
+  font-size: 1rem;
+  padding: .7rem 1.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.primary-btn {
+  @include set-background($primary-color);
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+.white-btn {
+  @include set-background($white-color);
+  color: $primary-color;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $white-color;
+  }
+}
+
+.dark-btn {
+  @include set-background($dark-color);
+
+  &:hover {
+    background-color: lighten($primary-color, 5%);
+  }
+}
+
+.light-btn {
+  @include set-background($light-color);
+
+  &:hover {
+    background-color: lighten($primary-color, 5%);
+  }
+}
+
+.danger-btn {
+  @include set-background($danger-color);
+
+  &:hover {
+    background-color: lighten($primary-color, 5%);
+  }
+}
+
+.success-btn {
+  @include set-background($success-color);
+
+  &:hover {
+    background-color: lighten($primary-color, 5%);
+  }
+}
+
+.border-btn {
+  background-color: transparent;
+  color: $white-color;
+  @include bordered($color: $white-color, $width: 2px);
+
+  &:hover {
+    background-color: $white-color;
+    color: $primary-color;
+  }
+}
+
+//Double Button
+.double-btn {
+  background-color: $primary-color;
+  display: inline-block;
+  padding: 0.25rem;
+
+  .primary-btn {
+    &:hover {
+      background-color: $white-color;
+      color: $primary-color;
+    }
+  }
+
+  .white-btn {
+    &:hover {
+      background-color: $white-color;
+      color: $primary-color;
+    }
+  }
+}
+
+//Container
+.container {
+  max-width: calc(100% - 8.375rem);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}

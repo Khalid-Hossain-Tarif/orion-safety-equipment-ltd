@@ -1,0 +1,58 @@
+//Set Background-Color and Text-color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+//Transition
+@mixin set-transition($area: all, $time: .3s, $type: ease-in-out) {
+  transition: $area $time $type;
+}
+
+//Border
+@mixin bordered($color: $primary-color, $width: 1px) {
+  border: $width solid $color;
+}
+
+@mixin bordered-left($color: $primary-color, $width: 1px) {
+  border-left: $width solid $color;
+}
+
+@mixin bordered-right($color: $primary-color, $width: 1px) {
+  border-right: $width solid $color;
+}
+
+@mixin bordered-top($color: $primary-color, $width: 1px) {
+  border-top: $width solid $color;
+}
+
+@mixin bordered-bottom($color: $primary-color, $width: 1px) {
+  border-bottom: $width solid $color;
+}
+
+//Display Flex
+@mixin display-flex($justify-content: space-between, $align-items: center, $gap: 1.25rem) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}
+
+//Display Grid
+@mixin display-grid($place-content: center, $gap: 1.25rem) {
+  display: grid;
+  place-content: $place-content;
+  gap: $gap;
+}
+
+//Padding Gap
+@mixin padding-gap($padding-top: 6.25rem, $padding-bottom: 6.25rem) {
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+}
+
+//Margin Gap
+@mixin margin-gap($margin-top: 6.25rem, $margin-bottom: 6.25rem) {
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+}

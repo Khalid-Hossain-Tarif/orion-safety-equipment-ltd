@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: $default-text-color;
+  min-height: 100vh;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+
+//Text
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.color-white {
+  color: $white-color;
+}
+
+input,
+select,
+textarea {
+  @include bordered($color: #c4c4c4);
+  background-color: #EEEEEE;
+  padding: 1rem;
+  width: 100%;
+
+  &:focus {
+    border-radius: 0;
+    outline: 0;
+    @include bordered($color: $primary-color !important);
+  }
+}
+
+.form-item {
+  margin-bottom: 0.5rem;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+.o-hidden {
+  overflow: hidden;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+a,
+img,
+button {
+  @include set-transition();
+}

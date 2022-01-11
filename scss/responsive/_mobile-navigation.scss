@@ -1,0 +1,119 @@
+.navigation {
+    position: absolute;
+    right: 0;
+    top: -5px;
+    height: 50px;
+    width: 50%;
+    @include set-transition;
+    z-index: 100000;
+
+    &.active {
+        height: auto;
+    }
+
+    .toggle {
+        position: relative;
+        top: -4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        span {
+            position: relative;
+            width: 20px;
+            height: 50px;
+
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $primary-color;
+                @include set-transition;
+            }
+
+            &:before {
+                top: 20px;
+            }
+
+            &:after {
+                bottom: 20px;
+            }
+        }
+
+        &.active {
+            span {
+                &:before {
+                    transform: rotate(225deg);
+                    top: 24px;
+                }
+            }
+
+            span {
+                &:after {
+                    transform: rotate(135deg);
+                    bottom: 24px;
+                }
+            }
+        }
+    }
+
+    ul {
+        position: relative;
+        background-color: $secondary-color;
+        padding: 1rem;
+
+        li {
+            a {
+                display: block;
+                padding: 0.25rem .75rem;
+                margin-bottom: 2px;
+                background-color: $secondary-color;
+                color: $white-color;
+                font-size: 0.875rem;
+                @include set-transition;
+
+                &:hover {
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .mobile-submenu {
+        display: none;
+
+        li {
+            a {
+                padding: 3px 0;
+                font-size: 0.5625rem;
+                color: $light-color;
+            }
+        }
+    }
+
+    .mobile-submenu-item {
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            right: 10px;
+            top: 17px;
+            height: 1px;
+            width: 10px;
+            background: $white-color;
+        }
+
+        &.mSactive {
+            .mobile-submenu {
+                display: block;
+                padding: 0 0 0 1rem;
+            }
+        }
+    }
+
+}

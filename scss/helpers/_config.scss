@@ -1,0 +1,23 @@
+//Margin and Padding
+$spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7);
+$sides: (top, bottom, left, right);
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{$space} {
+      margin: #{$space}rem;
+    }
+
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}rem;
+    }
+
+    .p-#{$space} {
+      padding: #{$space}rem;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}rem;
+    }
+  }
+}
