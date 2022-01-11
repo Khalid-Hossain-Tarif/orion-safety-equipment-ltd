@@ -5,6 +5,7 @@
 - Hero slider
 - Product Slider
 - Mega menu
+- Mobile hamburger menu
 - Sticky header
 - Responsive
 
